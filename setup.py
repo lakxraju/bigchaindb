@@ -33,7 +33,6 @@ tests_require = [
     'pep8',
     'pyflakes',
     'pylint',
-    'pytest',
     'pytest-cov',
     'pytest-xdist',
     'pytest-flask',
@@ -104,16 +103,16 @@ setup(
         'flask==0.10.1',
         'requests==2.9',
         'gunicorn~=19.0',
-        'pymultihash>=0.9.0.dev2',
+        'py-ipld==0.0.1',
     ],
     dependency_links=[
-        'git+https://github.com/TimDaub/pymultihash.git@devel#egg=pymultihash-0.9.0.dev2',
+        'git+https://github.com/bigchaindb/py-ipld.git@master#egg=py_ipld-0.0.1',
     ],
     setup_requires=['pytest-runner'],
     tests_require=tests_require,
     extras_require={
         'test': tests_require,
-        'dev':  dev_require + tests_require + docs_require + benchmarks_require,
-        'docs':  docs_require,
+        'dev': dev_require + tests_require + docs_require + benchmarks_require,
+        'docs': docs_require,
     },
 )
